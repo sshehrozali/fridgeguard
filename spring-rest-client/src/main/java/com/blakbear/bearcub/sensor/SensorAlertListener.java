@@ -4,4 +4,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class SensorAlertListener {
+    public void listener() {
+
+    }
 }
