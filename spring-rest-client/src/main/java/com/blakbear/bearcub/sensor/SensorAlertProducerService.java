@@ -9,5 +9,6 @@ import org.springframework.stereotype.Service;
 public class SensorAlertProducerService {
     private KafkaTemplate<String, String> kafkaTemplate;
     public void produceNewAlert(NewSensorAlertRequest newSensorAlertRequest) {
+        kafkaTemplate.send("alerts", newSensorAlertRequest.bearcub());
     }
 }
