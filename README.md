@@ -5,7 +5,7 @@ The trigger happens when a document (in a collection *'data'*) of Firebase Fires
 
 The system diagram below represents the complete flow from triggering event to data stream ingestion in BigQuery:
 
-![](firebase-serverless/diagram.png)
+![](system_diagram_native.png)
 
 For accessing BigQuery API and bypassing authentication, it uses a *Service Based Account* approach in order to authenticate into Google Cloud project and BigQuery API. For this, you need to:
 
@@ -19,3 +19,10 @@ For accessing BigQuery API and bypassing authentication, it uses a *Service Base
 - Once done, go to BigQuery and run a search query to query all the records.
 
 Note that: For crucial security purpose, *key.json* file has been added to *.gitignore* as it contains your Google Cloud project credentials for access and authentication via client libraries.
+
+### Implenting Kafka support for Storing Alert Log for aggregation and real-time streaming
+
+The system is also capable to publish alert logs to Kafka topic when document gets updated in Firestore instance *data*. In makes a *POST* request call to Spring Kafka Client application with payload. The Kafka Client then publishes a new alert log in the Kafka topic *alerts* which can then be further consumed to perform write streams to external data sources.
+
+The diagram below represents the entire flow:
+![](system_diagram_kafka_client.png)
