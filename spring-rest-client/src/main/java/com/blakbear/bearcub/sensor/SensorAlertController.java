@@ -5,6 +5,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController("api/v1")
 @RequiredArgsConstructor
-public class SensorController {
+public class SensorAlertController {
     private final SensorAlertProducerService sensorAlertProducerService;
 }
