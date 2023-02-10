@@ -45,10 +45,11 @@ exports.updateSensorData = functions.firestore
     axios
       .request(options)
       .then(function (response) {
-        console.log(response.data);
+        functions.logger.info("Alert log successfully published to Kafka");
       })
       .catch(function (error) {
-        console.error(error);
+        functions.logger.error("Error while publishing alert log in Kafka");
+        functions.logger.error(error);
       });
 
     // Start stream operation to Google Cloud BigQuery
