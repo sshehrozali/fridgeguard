@@ -8,8 +8,8 @@ import org.springframework.stereotype.Component;
 @Component
 @Slf4j
 public class SensorAlertListener {
-    @KafkaListener(topics = "alerts")
-    public void listener() {
-
+    @KafkaListener(topics = "alerts", groupId = "groupId")
+    public void listener(String data) {
+        log.info("Alert received: " + data);
     }
 }
