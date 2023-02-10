@@ -1,2 +1,7 @@
-package com.blakbear.bearcub.sensor;public class SensorAlertListener {
+package com.blakbear.bearcub.sensor;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class SensorAlertListener {
 }
