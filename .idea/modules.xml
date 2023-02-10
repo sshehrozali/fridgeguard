@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/spring-rest-client/bearcub.iml" filepath="$PROJECT_DIR$/spring-rest-client/bearcub.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/food-spoil-alert-system.iml" filepath="$PROJECT_DIR$/.idea/food-spoil-alert-system.iml" />
     </modules>
   </component>
