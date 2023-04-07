@@ -1,4 +1,6 @@
 ## FridgeGuard 🛡
+#### The idea is generally to preserve food spoilage better for industries using event-driven alerting based approach.
+
 This is an event-based system that triggers alert and stream ingestion in Google Cloud BigQuery when a sensor (such as ESP32) detects a spoil behaviour.
 
 The trigger happens when a document (in a collection *'data'*) of Firebase Firestore instance gets updated. It then checks if the value of *spoiled* field is either *TRUE*. If it is, then it exports the data into a BigQuery table *'sensor'* inside *'data*' dataset with the same identical schema.
